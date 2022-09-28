@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: whoami
+
+spec:
+  rules:
+    - host: REPLACE IN OVERLAY
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name:  whoami
+                port:
+                  name: http
