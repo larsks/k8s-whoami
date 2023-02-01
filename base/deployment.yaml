@@ -8,7 +8,7 @@ spec:
     spec:
       containers:
         - name: whoami
-          image: docker.io/containous/whoami
+          image: docker.io/traefik/whoami
           ports:
             - containerPort: 80
               name: http

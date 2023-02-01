@@ -2,8 +2,14 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: whoami
-
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "house"
 spec:
+  tls:
+    - hosts:
+      - REPLACE IN OVERLAY
+      secretName: example-cert
   rules:
     - host: REPLACE IN OVERLAY
       http:

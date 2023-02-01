@@ -12,10 +12,8 @@ patches:
       name: whoami
     patch: |
       - op: replace
+        path: /spec/tls/0/hosts/0
+        value: whoami.apps.infra.house
+      - op: replace
         path: /spec/rules/0/host
         value: whoami.apps.infra.house
-      - op: add
-        path: /metadata/annotations
-        value:
-          traefik.ingress.kubernetes.io/router.entrypoints: websecure
-          traefik.ingress.kubernetes.io/router.tls.certresolver: incluster
