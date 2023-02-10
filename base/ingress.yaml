@@ -9,7 +9,7 @@ spec:
   tls:
     - hosts:
       - REPLACE IN OVERLAY
-      secretName: example-cert
+      secretName: whoami-cert
   rules:
     - host: REPLACE IN OVERLAY
       http:
