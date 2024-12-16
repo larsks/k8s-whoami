@@ -7,8 +7,11 @@ spec:
   template:
     spec:
       containers:
-        - name: whoami
-          image: docker.io/traefik/whoami
-          ports:
-            - containerPort: 80
-              name: http
+      - name: whoami
+        image: docker.io/traefik/whoami
+        env:
+        - name: WHOAMI_PORT_NUMBER
+          value: "8080"
+        ports:
+        - containerPort: 8080
+          name: http
